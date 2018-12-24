@@ -1,0 +1,24 @@
+{
+  "name": "cinema-bot",
+  "version": "1.0.0",
+  "description": "telegram bot for advicing movies and cinemas according to your preferences and location",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Likholetov/cinema-bot.git"
+  },
+  "keywords": [
+    "cinema",
+    "movie",
+    "kinopoisk"
+  ],
+  "author": "Likholetov",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Likholetov/cinema-bot/issues"
+  },
+  "homepage": "https://github.com/Likholetov/cinema-bot#readme"
+}
