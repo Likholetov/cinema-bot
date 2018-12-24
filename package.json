@@ -20,5 +20,8 @@
   "bugs": {
     "url": "https://github.com/Likholetov/cinema-bot/issues"
   },
-  "homepage": "https://github.com/Likholetov/cinema-bot#readme"
+  "homepage": "https://github.com/Likholetov/cinema-bot#readme",
+  "dependencies": {
+    "node-telegram-bot-api": "^0.30.0"
+  }
 }
