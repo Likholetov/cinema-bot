@@ -4,7 +4,8 @@
   "description": "telegram bot for advicing movies and cinemas according to your preferences and location",
   "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node ./src/index.js",
+    "dev": "nodemon ./src/index.js"
   },
   "repository": {
     "type": "git",
@@ -22,6 +23,10 @@
   },
   "homepage": "https://github.com/Likholetov/cinema-bot#readme",
   "dependencies": {
+    "movie-api": "^0.14.6",
     "node-telegram-bot-api": "^0.30.0"
+  },
+  "devDependencies": {
+    "nodemon": "^1.18.9"
   }
 }

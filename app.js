@@ -1,4 +1,7 @@
+import {Kinopoisk} from 'movie-api';
+
 const TelegramBot = require('node-telegram-bot-api');
+const kp = new Kinopoisk();
 
 // replace the value below with the Telegram token you receive from @BotFather
 const token = 'YOUR_TELEGRAM_BOT_TOKEN';
