@@ -1,5 +1,7 @@
 const TelegramBot = require('node-telegram-bot-api')
 const config = require('./config')
+const keyboard = require('./keyboard/keyboard')
+const kb = require('./keyboard/keyboard-buttons')
 
 //controllers
 const movieController = require('./controllers/movieController')
@@ -8,17 +10,15 @@ const cinemaController = require('./controllers/cinemaController')
 // Create a bot that uses 'polling' to fetch new updates
 const bot = new TelegramBot(config.TOKEN, {polling: true})
 
-// Matches "/echo [whatever]"
-bot.onText(/\/echo (.+)/, (msg, match) => {
-  // 'msg' is the received Message from Telegram
-  // 'match' is the result of executing the regexp above on the text content
-  // of the message
-
-  const chatId = msg.chat.id
-  const resp = match[1] // the captured "whatever"
-
-  // send back the matched "whatever" to the chat
-  bot.sendMessage(chatId, resp)
+//обработка команды /start
+bot.onText(/\/start/, msg => {
+  const text = `Здравствуйте, ${msg.from.first_name}\nВыберите команду для начала работы.`
+  bot.sendMessage(msg.chat.id, text, {
+      reply_markup: {
+          resize_keyboard: true,
+          keyboard: keyboard.main
+      }
+  })
 })
 
 // Listen for any kind of message. There are different kinds of
