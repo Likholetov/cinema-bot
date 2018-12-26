@@ -23,7 +23,9 @@
   },
   "homepage": "https://github.com/Likholetov/cinema-bot#readme",
   "dependencies": {
-    "movie-api": "^0.14.6",
+    "geolib": "^2.0.24",
+    "lodash": "^4.17.11",
+    "mongoose": "^5.4.0",
     "node-telegram-bot-api": "^0.30.0"
   },
   "devDependencies": {

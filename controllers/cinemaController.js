@@ -1,5 +1,5 @@
-const kp = require('movie-api').Kinopoisk
-
-class CinemaController {}
+class CinemaController {
+    
+}
   
 module.exports = new CinemaController()
