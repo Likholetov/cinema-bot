@@ -38,7 +38,7 @@ bot.on('message', async msg => {
     switch(msg.text){
         case kb.main.favourite:
             const html = await filmController.showFavouriteFilms(msg.from.id)
-            sendHTML(chatId, html, 'main')
+            sendHTML(chatId, html)
             break
         case kb.main.films:
             bot.sendMessage(chatId, 'Выберите жанр:', await filmController.inlineGenreKeyboard());
@@ -53,7 +53,7 @@ bot.on('message', async msg => {
             break
         case kb.main.recommend:
             const recommend = await filmController.showRecommendation(msg.from.id)
-            sendHTML(chatId, recommend, 'main')
+            sendHTML(chatId, recommend)
             break
         case kb.back:
             bot.sendMessage(chatId, 'Что хотите посмотреть?', {
