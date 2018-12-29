@@ -5,12 +5,12 @@ const config = require('./config')
 const keyboard = require('./keyboard/keyboard')
 const kb = require('./keyboard/keyboard-buttons')
 
-// контроллеры
+// controllers
 const filmController = require('./controllers/filmController')
 const cinemaController = require('./controllers/cinemaController')
 const userController = require('./controllers/userController')
 
-//подключаем базу данных
+// connect to DB
 mongoose.connect(config.DB_URL, {
     useNewUrlParser: true
 })
@@ -24,12 +24,13 @@ const ACTION_TYPE = {
     SHOW_FILMS: 'sf'
 }
 
-//создаем объект бот
+// Create a bot that uses 'polling' to fetch new updates
 const bot = new TelegramBot(config.TOKEN, {
     polling: true
 })
 
-//получил сообщение от пользователя
+// Listen for any kind of message. There are different kinds of
+// messages.
 bot.on('message', async msg => {
     console.log('Working', msg.from.first_name)
 
@@ -72,7 +73,7 @@ bot.on('message', async msg => {
 
 })
 
-//обработка команды /start
+// обработка команды /start
 bot.onText(/\/start/, msg => {
     const text = `Здравствуйте, ${msg.from.first_name}\nВыберите команду для начала работы:`
     bot.sendMessage(msg.chat.id, text, {
@@ -131,7 +132,7 @@ bot.onText(/\/f(.+)/, async (msg, [source, match]) => {
 
 })
 
-//обработка выбора из списка кинотеатров
+// обработка выбора из списка кинотеатров
 bot.onText(/\/c(.+)/, async (msg, [source, match]) => {
     const cinemaUuid = match
     const chatId = msg.chat.id
@@ -168,7 +169,7 @@ bot.onText(/\/c(.+)/, async (msg, [source, match]) => {
     })
 })
 
-//обработка инлайн клавиатуры
+// обработка инлайн клавиатуры
 bot.on('callback_query', async query => {
     const userId = query.from.id
     let data
@@ -207,7 +208,7 @@ bot.on('inline_query', async query => {
     })
 })
 
-//обработка вывода HTML разметки
+// обработка вывода HTML разметки
 function sendHTML(chatId, html, kbName = null) {
     const options = {
         parse_mode: 'HTML',

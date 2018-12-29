@@ -18,3 +18,8 @@ Thanks to: [node-telegram-bot-api](https://github.com/yagop/node-telegram-bot-ap
 * Run the bot
     * ```npm run start``` 
     * Stop it at any time with CTRL+C
+
+## How to use test-data for DB
+
+* If you want to test functions of bot, you can use test data
+* ```npm run test``` 
