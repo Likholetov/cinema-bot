@@ -8,11 +8,12 @@ const Cinema = mongoose.model('cinemas')
 
 class CinemaController {
 
-
+    // поиск кинотеатра в базе
     findOneCinema(query){
         return Cinema.findOne(query)
     }
 
+    // формирование списка кинотеатров
     async sendCinemasByQuery(query) {
         const cinemas = await Cinema.find(query)
         const html = cinemas.map((c, i) => {
@@ -21,6 +22,7 @@ class CinemaController {
     return html
     }
 
+    // получение списка кинотеатров по удалению от пользователя
     async getCinemasInCoord(location){
         let cinemas = await Cinema.find({})
         cinemas.forEach(c => { 
