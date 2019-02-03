@@ -4,8 +4,8 @@
   "description": "telegram bot for advicing movies and cinemas according to your preferences and location",
   "main": "app.js",
   "scripts": {
-    "start": "node ./src/index.js",
-    "dev": "nodemon ./src/index.js",
+    "start": "node app.js",
+    "dev": "nodemon app.js",
     "test": "node ./test-data/test.js"
   },
   "repository": {
